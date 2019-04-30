@@ -44,7 +44,7 @@ public class AlterarCadastro extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jTextFieldID = new javax.swing.JTextField();
         jTextFieldNasc = new javax.swing.JTextField();
-        jButtonSair = new javax.swing.JButton();
+        jButtonFechar = new javax.swing.JButton();
         jButtonEditar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -100,11 +100,11 @@ public class AlterarCadastro extends javax.swing.JFrame {
         jTextFieldNasc.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jTextFieldNasc.setEnabled(false);
 
-        jButtonSair.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButtonSair.setText("Sair");
-        jButtonSair.addActionListener(new java.awt.event.ActionListener() {
+        jButtonFechar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jButtonFechar.setText("Fechar");
+        jButtonFechar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonSairActionPerformed(evt);
+                jButtonFecharActionPerformed(evt);
             }
         });
 
@@ -133,7 +133,7 @@ public class AlterarCadastro extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jTextFieldID, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButtonSair))
+                                .addComponent(jButtonFechar))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
@@ -166,7 +166,7 @@ public class AlterarCadastro extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(jTextFieldID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonSair))
+                    .addComponent(jButtonFechar))
                 .addGap(1, 1, 1)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
@@ -215,11 +215,10 @@ public class AlterarCadastro extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jPasswordFieldSenhaActionPerformed
 
-    private void jButtonSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSairActionPerformed
+    private void jButtonFecharActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonFecharActionPerformed
         // TODO add your handling code here:
-        TelaSair tela = new TelaSair();
-        tela.setVisible(true);
-    }//GEN-LAST:event_jButtonSairActionPerformed
+        dispose();
+    }//GEN-LAST:event_jButtonFecharActionPerformed
 
     private void jButtonEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEditarActionPerformed
         // TODO add your handling code here:
@@ -305,8 +304,8 @@ public class AlterarCadastro extends javax.swing.JFrame {
     private javax.swing.JButton jButAlterar;
     private javax.swing.JButton jButtonCancelar;
     private javax.swing.JButton jButtonEditar;
+    private javax.swing.JButton jButtonFechar;
     private javax.swing.JButton jButtonPesquisar;
-    private javax.swing.JButton jButtonSair;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

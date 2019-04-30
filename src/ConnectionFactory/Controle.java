@@ -98,7 +98,7 @@ public class Controle {
             pst.execute();
             JOptionPane.showMessageDialog(null, "Cadastro Alterado com sucesso!");
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Erro ao Alterar Cadastro!"+ex);
+            JOptionPane.showMessageDialog(null, "Erro ao Alterar Cadastro!\n"+ex);
         }
         conex.desconectar();        
     }
