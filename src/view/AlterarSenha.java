@@ -74,7 +74,7 @@ public class AlterarSenha extends javax.swing.JFrame {
         });
 
         jLabelLogin.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabelLogin.setText("Login:");
+        jLabelLogin.setText("ID Login:");
 
         jTextFieldLogin.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
@@ -88,8 +88,8 @@ public class AlterarSenha extends javax.swing.JFrame {
                         .addGap(21, 21, 21)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabelLogin)
-                                .addGap(18, 18, 18)
+                                .addComponent(jLabelLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jTextFieldLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -143,29 +143,29 @@ public class AlterarSenha extends javax.swing.JFrame {
     private void jButtonAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAlterarActionPerformed
         // TODO add your handling code here:
         Usuario user = new Usuario();
-        ConnectionUrna conex = new ConnectionUrna();
         Controle control = new Controle();
         String senhanova1 = new String(jPasswordSenhaNova1.getPassword());
         String senhanova2 = new String(jPasswordSenhaNova2.getPassword());
         user.setId(Integer.valueOf(jTextFieldLogin.getText()));
-        control.TrazerSenha(user);
+        control.TrazerUsuario(user);
         
         if(user.getSenhaUsuario().equals(new String(jPasswordSenhaAtual.getPassword()))){
             if(((senhanova1.length() == 5) && (!senhanova1.contains(" "))) 
             && ((senhanova2.length() == 5) && (!senhanova2.contains(" ")))){
                 if(senhanova1.equals(senhanova2)){
-                    user.setSenhaAntiga2(user.getSenhaAntiga());
-                    user.setSenhaAntiga(user.getSenhaUsuario());
                     if((senhanova1.equals(user.getSenhaAntiga())) 
                     || (senhanova2.equals(user.getSenhaAntiga2()))){
                         JOptionPane.showMessageDialog(rootPane, "Sua senha não pode ser igual suas últimas 3 senhas");
                     }else{
+                        user.setSenhaAntiga2(user.getSenhaAntiga());
+                        user.setSenhaAntiga(user.getSenhaUsuario());
                         user.setSenhaUsuario(senhanova1);
                         control.AlterarSenha(user);
                         jTextFieldLogin.setText("");
                         jPasswordSenhaAtual.setText("");
                         jPasswordSenhaNova1.setText("");
                         jPasswordSenhaNova2.setText("");
+                        dispose();
                     }
                 }else{
                     JOptionPane.showMessageDialog(rootPane, "Senha Nova Invalida");

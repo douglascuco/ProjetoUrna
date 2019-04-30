@@ -31,6 +31,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenuConta = new javax.swing.JMenu();
         jMenuItemAlterarSenha = new javax.swing.JMenuItem();
+        jMenuItemAlterarCadastro = new javax.swing.JMenuItem();
         jMenuSair = new javax.swing.JMenu();
         jMenuItemSair = new javax.swing.JMenuItem();
 
@@ -48,6 +49,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
         jMenuConta.add(jMenuItemAlterarSenha);
+
+        jMenuItemAlterarCadastro.setText("Alterar Cadastro");
+        jMenuItemAlterarCadastro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemAlterarCadastroActionPerformed(evt);
+            }
+        });
+        jMenuConta.add(jMenuItemAlterarCadastro);
 
         jMenuBar1.add(jMenuConta);
 
@@ -98,6 +107,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
         alterar.setVisible(true);
     }//GEN-LAST:event_jMenuItemAlterarSenhaActionPerformed
 
+    private void jMenuItemAlterarCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemAlterarCadastroActionPerformed
+        // TODO add your handling code here:
+        AlterarCadastro tela = new AlterarCadastro();
+        tela.setVisible(true);
+    }//GEN-LAST:event_jMenuItemAlterarCadastroActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -137,6 +152,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelBemVindo;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenu jMenuConta;
+    private javax.swing.JMenuItem jMenuItemAlterarCadastro;
     private javax.swing.JMenuItem jMenuItemAlterarSenha;
     private javax.swing.JMenuItem jMenuItemSair;
     private javax.swing.JMenu jMenuSair;
